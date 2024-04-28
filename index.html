@@ -1,2 +1,34 @@
-test
-test2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatic RNG</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+ 
+  #random-number {
+    font-size: 6em;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+  <div id="random-number">0</div>
+  <script>
+    function generateRandomNumber() {
+      const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+      document.getElementById('random-number').textContent = randomNumber;
+    }
+
+    generateRandomNumber();
+
+    // Set interval to generate a new random number every 5 seconds
+    setInterval(generateRandomNumber, 5000);
+  </script>
+</body>
+</html>
